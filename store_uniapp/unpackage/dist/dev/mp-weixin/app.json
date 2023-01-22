@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/msg/pl",
+    "pages/add_b/add",
+    "pages/update_b/update"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#ef6ff8",
+    "backgroundColor": "#F8F8F8",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#bebe8e",
+    "selectedColor": "#DD524D",
+    "backgroundColor": "#8F8F94",
+    "borderStyle": "#DD524D",
+    "list": [
+      {
+        "text": "Bill",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png"
+      },
+      {
+        "text": "PurchaseList",
+        "pagePath": "pages/msg/pl",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/logo.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

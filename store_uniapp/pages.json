@@ -1,0 +1,82 @@
+{
+	//页面配置
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "Bill"
+			}
+		},
+		{
+			"path": "pages/msg/pl",
+			"style": {
+				"navigationBarTitleText": "PL",
+				"navigationBarBackgroundColor": "#5ff8e1",
+				//h5页面单独设置样式，微信开发者工具中不会显示,设置平台独有特定样式
+				"h5": {
+					//下拉刷新
+					"pullToRefresh": {
+						"color": "#DD524D"
+					}
+				}
+			}
+		},
+		{
+			"path":"pages/add_b/add",
+			"style":{
+				"navigationBarTitleText":"添加表单"
+			}
+		},
+		{
+			"path":"pages/update_b/update",
+			"style":{
+				"navigationBarTitleText":"修改表单"
+			}
+		}
+
+	],
+	//全局配置（页面配置会覆盖全局配置）
+	"globalStyle": {
+		// 头部文字颜色（白色white和黑色black）
+		"navigationBarTextStyle": "black",
+		//标题设定
+		"navigationBarTitleText": "uni-app",
+		//头部背景色
+		"navigationBarBackgroundColor": "#ef6ff8",
+		// 背景色(下拉可见)
+		"backgroundColor": "#F8F8F8",
+		//开启下拉刷新
+		"enablePullDownRefresh": true,
+		//背景刷新色(亮色light和暗色dark)
+		"backgroundTextStyle": "light"
+	},
+	
+	"tabBar": {
+		//未选中的tab颜色
+		"color":"#bebe8e",
+		//选中的tab颜色
+		"selectedColor":"#DD524D",
+	    //背景色
+		"backgroundColor":"#8F8F94",
+		//上边框线颜色
+		"borderStyle":"#DD524D",
+		//tab栏只能为2~5个
+		"list": [{
+				// 标签页名称
+				"text": "Bill",
+				//标签页地址
+				"pagePath": "pages/index/index",
+				//标签页图片
+				"iconPath": "static/logo.png",
+				//
+				"selectedIconPath": "static/logo.png"
+			},
+			{
+				"text": "PurchaseList",
+				"pagePath": "pages/msg/pl",
+				"iconPath": "static/logo.png",
+				"selectedIconPath": "static/logo.png"
+			}
+		]
+	}
+}

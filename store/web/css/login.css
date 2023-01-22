@@ -1,0 +1,23 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #272822;
+    color: #F0F8FF;
+}
+#form{
+    margin: 200px 600px 0;
+    text-align: center;
+    padding: 20px;
+    border: 1px #CAFFBB solid;
+}
+h1{
+    position: relative;
+    left:89px;
+    top: 63px;
+}
+.input{
+    margin: 8px 0px;
+}
+.btn{
+    margin: auto 10px;
+}

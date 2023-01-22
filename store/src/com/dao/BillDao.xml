@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BillDao">
+    <!--综合查询-->
+    <select id="findBill" resultType="Bill" parameterType="String">
+        select * from s_bill where 1=1
+        <if test="search != null and search !='' ">
+            and id=#{search} or name like concat('%',#{search},'%') or cname like concat('%',#{search},'%') or amountb like concat('%',#{search},'%') or time like concat('%',#{search},'%') or price like concat('%',#{search},'%')
+        </if>
+    </select>
+    <!--根据id查询-->
+    <select id="findBillById" parameterType="Integer" resultType="Bill">
+        select * from s_bill where id =#{id}
+    </select>
+    <!--    客户名模糊查询-->
+    <select id="findBillByCname" resultType="Bill" parameterType="String">
+        select * from s_bill where cname like concat('%',#{cname},'%')
+    </select>
+    <!--    商品名模糊查询-->
+    <select id="findBillByName" resultType="Bill" parameterType="String">
+        select * from s_bill where name like concat('%',#{name},'%')
+    </select>
+    <!--    查询所有用户-->
+    <select id="findAllBill" resultType="Bill">
+        select * from s_bill
+    </select>
+    <!--    删-->
+    <delete id="deleteBill" parameterType="Integer">
+        delete from s_bill where id=#{id}
+    </delete>
+    <!--    增-->
+    <insert id="addBill" parameterType="Bill">
+        insert into s_bill(id,name,cname,amountb,time,price) values (#{id},#{name},#{cname},#{amountb},#{time},#{price})
+    </insert>
+    <!--    改-->
+    <update id="updateBill" parameterType="Bill">
+        update s_bill
+        <set>
+            <if test="name !=null and name !=''">
+                name =#{name},
+            </if>
+            <if test="cname !=null and cname !=''">
+                cname =#{cname},
+            </if>
+            <if test="amountb !=null and amountb !=''">
+                amountb =#{amountb},
+            </if>
+            <if test="time !=null and time !=''">
+                time =#{time},
+            </if>
+            <if test="price !=null and price !=''">
+                price =#{price},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>
